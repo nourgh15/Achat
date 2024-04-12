@@ -1,7 +1,7 @@
 version: "1.0"
 
 services:
-  mysqldb:
+  achatdb:
     image: mysql:5.7
     restart: unless-stopped
     environment:
@@ -13,7 +13,7 @@ services:
       - db:/var/lib/mysql
   app-achat:
     depends_on:
-      - mysqldb
+      - achatdb
     image: nourgh/achat:1.0.0
     restart: on-failure
     ports:
