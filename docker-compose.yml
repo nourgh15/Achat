@@ -17,5 +17,5 @@ services:
     image: nourgh/achat:1.0.0
     restart: on-failure
     ports:
-      - 8082:8082
+      - 8089:8089
     
