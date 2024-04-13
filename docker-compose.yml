@@ -6,7 +6,6 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: achatdb
-      MYSQL_ROOT_PASSWORD: password
     ports:
       - 3306:3306
     volumes:
@@ -18,5 +17,11 @@ services:
     restart: on-failure
     ports:
       - 8089:8089
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url": "jdbc:mysql://mysqldb:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", 
+        "spring.datasource.username": "root", 
+        "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect", 
+        "spring.jpa.hibernate.ddl-auto": "update"}'
 volumes:
   mysqldb-data:
