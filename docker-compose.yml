@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=1Ver2Sky
+      - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=achatdb
     ports:
       - 3306:3306
@@ -15,7 +15,7 @@ services:
     depends_on:
       - mysqldb
     image: nourgh/achat:1.0.0
-    #restart: on-failure
+    restart: on-failure
     ports:
       - 8089:8089
     environment:
