@@ -12,11 +12,11 @@ services:
       - db:/var/lib/mysql
 app-timesheet:
     depends_on:
-    - mysqldb
+      - mysqldb
     image: mariemnefzi/achat:1.0.0: 1.0.0
     restart: on-failure
     ports:
-    - 8089:8089
+      - 8089:8089
     environment:
       SPRING APPLICATION_JSON: '{
         "spring.datasource.url":
