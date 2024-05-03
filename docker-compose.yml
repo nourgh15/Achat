@@ -13,7 +13,7 @@ services:
 app-timesheet:
     depends_on:
       - mysqldb
-    image: mariemnefzi/achat:1.0.0: 1.0.0
+    image: mariemnefzi/achat:2.0.0: 2.0.0
     restart: on-failure
     ports:
       - 8089:8089
